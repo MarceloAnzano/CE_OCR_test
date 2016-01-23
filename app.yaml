@@ -21,6 +21,9 @@ handlers:
 - url: /resources
   static_dir: resources
 
+- url: /fonts
+  static_dir: fonts
+
 - url: /.*
   script: main.app
 
