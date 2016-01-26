@@ -18,7 +18,6 @@
 </head>
 
 <body>
-
 	<div class="container-fluid" id = "header-wrapper">
 		<div class = "container">
             <div class="row">
@@ -39,14 +38,14 @@
                 <li><a href = "#">ACCOUNT SETTINGS</a></li>
                 <li><a href = "#">HOME</a></li>
             </ul>
-            <ul class = " nav pull-right" id = "navbar-subtabs">
+            <ul class="nav pull-right" id = "navbar-subtabs">
                 <li><a href = "#"><i class="fa fa-sign-out" id = "navbar-subtabs-logo"></i>Logout</a></li>
             </ul>
         </div>    
     </div>
 </div>
 
-
+<!--Content and Sidebar-->
 <div class="container-fluid" id="main-content-wrapper">
     <!-- Sidebar -->
     <div class="row" id="main-col-wrapper">
@@ -56,34 +55,33 @@
                     <div id="sidebar-menu">
                         <i class="icon-class-record"></i><span>Record</span>
                     </div>
-                    <li id="sidebar-item" class="accordion-section">
-                        <a id="sidebar-menu" class="accordion-section-title" href="#accordion-1">Computer Networks
-                            <!-- <div class="glyphicon glyphicon-menu-down pull-right" aria-hidden="true"></div> -->
-                        </a>
+                    <li id="sidebar-subMenu" class="accordion-section">
+                        <a class="accordion-section-title hideOverflow" href="#accordion-1">Computer Networks<span class="arrow-left"></span></a>
                         <div id="accordion-1" class="accordion-section-content">
-                            <div id="sidebar-item"><a>BSCpE 5-1</a></div>
-                            <div id="sidebar-item"><a>BSCpE 5-1</a></div>
-                            <div id="sidebar-item"><a>BSCpE 5-1</a></div>
+                            <div id="sidebar-item"><a>BSCpE 5-1<span class="arrow-left"></span></a></div>
+                            <div id="sidebar-item"><a>BSCpE 5-1<span class="arrow-left"></span></a></div>
+                            <div id="sidebar-item"><a>BSCpE 5-1<span class="arrow-left"></span></a></div>
                         </div>
                     </li>
 
-                    <li id="sidebar-item" class="accordion-section">
-                        <a id="sidebar-menu" class="accordion-section-title" href="#accordion-2">Software Engineering</a>
+                    <li id="sidebar-subMenu" class="accordion-section">
+                        <a class="accordion-section-title hideOverflow" href="#accordion-2">Software Engineering<span class="arrow-left"></span></a>
                         <div id="accordion-2" class="accordion-section-content">
-                            <div id="sidebar-item"><a>BSCpE 5-1</a></div>
-                            <div id="sidebar-item"><a>BSCpE 5-1</a></div>
-                            <div id="sidebar-item"><a>BSCpE 5-1</a></div>
+                            <div id="sidebar-item"><a>BSCpE 5-1<span class="arrow-left"></span></a></div>
+                            <div id="sidebar-item"><a>BSCpE 5-1<span class="arrow-left"></span></a></div>
+                            <div id="sidebar-item"><a>BSCpE 5-1<span class="arrow-left"></span></a></div>
                         </div>
                     </li>
+
                 </ul>
-                <ul><div id="sidebar-menu">
-                    <a href="#"><i class="icon-modules"></i><span>Modules</span></a>
+                <ul><div id="sidebar-menu" class="toggle-sidebar">
+                        <i class="icon-modules"></i><span>Modules</span>
                 </div>
             </ul>
         </div>
     </div>
 
-    <!-- delete -->
+    <!-- Main Content delete -->
     <div class = "container" id = "TEMPORARY">
         <div class="container-fluid">
             <span>CODE FOR HEADER, NAVBAR AND FOOTER</span>
