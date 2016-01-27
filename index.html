@@ -14,6 +14,8 @@
 
     <link type="text/css" href="css/sidebar.css" rel="stylesheet">
 
+    <!--delete-->
+    <script src='https://cdn.firebase.com/js/client/2.3.1/firebase.js'></script>
 
 </head>
 
@@ -35,7 +37,7 @@
                <ul class = " nav pull-left" id= "navbar-maintabs">
                 <li><a href = "#">ARCHIVES</a></li>
                 <li><a href = "#">CALENDAR</a></li>
-                <li><a href = "#">ACCOUNT SETTINGS</a></li>
+                <li><a href = "#">SETTINGS</a></li>
                 <li><a href = "#">HOME</a></li>
             </ul>
             <ul class="nav pull-right" id = "navbar-subtabs">
@@ -76,18 +78,32 @@
                 </ul>
                 <ul><div id="sidebar-menu" class="toggle-sidebar">
                         <i class="icon-modules"></i><span>Modules</span>
-                </div>
-            </ul>
+                    </div>
+                </ul>
+            </div>
         </div>
-    </div>
 
-    <!-- Main Content delete -->
-    <div class = "container" id = "TEMPORARY">
-        <div class="container-fluid">
-            <span>CODE FOR HEADER, NAVBAR AND FOOTER</span>
+        <!-- Main Content delete -->
+        <div class = "container" id = "TEMPORARY">
+            <div class="container-fluid row">
+                <span>FACULTY PAGE</span>
+            </div>
+            <div class="container-fluid row">
+                <div class="col-md-6">   
+                <input id="username" class="form-control" type="text" placeholder="NAME"><br/>
+                <textarea id="comment" class="form-control" rows="3" placeholder="COMMENT"></textarea><br/>
+                <button id="post" class="btn btn-default">Submit</button><br/>
+                </div>
+            </div>
+            <div class="container-fluid row">
+                <br/><br/>
+                <span>COMMENTS:</span>
+                <div id="results" style="padding-left:30px;"></div>
+            </div>
         </div>
+
+    <!--End of content-->
     </div>
-</div>
 </div>
 
 <div class = "container-fluid" id = "footer-wrapper">
@@ -116,6 +132,7 @@
 <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
 <script type="text/javascript" src="js/sidebar.js"></script>
 <script type="text/javascript" src="plugins/bootstrap/js/bootstrap.min.js"></script>
+<!--
 <script type="text/javascript">
     $("#sidebar-toggle").click(function(e){
         e.preventDefault();
@@ -125,5 +142,44 @@
         e.preventDefault();
     });
 </script>
-
+-->
+<!-- delete -->
+<script>
+    var myFirebase =  new Firebase("https://mranzano-trial.firebaseio.com/");
+    var usernameInput = document.querySelector('#username');
+    var textInput = document.querySelector('#comment');
+    var postButton = document.querySelector('#post');
+    postButton.addEventListener("click", function() {
+        var username = usernameInput.value;
+        var text = textInput.value;
+        username = username.replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
+        text = text.replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
+        myFirebase.push({username:username,text:text});
+        textInput.value = "";
+        usernameInput.value = "";
+    });
+    
+    myFirebase.on('child_added', function(snapshot) {
+    var msg = snapshot.val();
+    var html = '<div class="msg' 
+               + (msg.username == usernameInput.value ? ' me' : '')
+               +'">' +
+               '<b>' + msg.username + '</b>' +
+               '<p>' + msg.text + '</p>' +
+               '</div>';
+    document.querySelector("#results").innerHTML += html;
+    });
+</script>
+<style>
+    .msg {
+        margin: 10px 0;
+        padding: 10px;
+        width: 400px;
+        background-color: #efefef;
+    }
+    .me {
+        background-color: #cdcdcd;
+        text-align: right;
+    }
+</style>
 </body>
