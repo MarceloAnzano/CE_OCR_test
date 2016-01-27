@@ -1,124 +1,88 @@
 @import '/fonts/icon.css';
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
 
 #sidebar-wrapper{
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
 	width: 220px;
-	height: inherit;
 	overflow: hidden;
-	background-color: #000;
+	background-color: #2e2c2d;
 	padding-right: 0px;
 	transition: none;
-	/*transition: all 0.5s ease;*/
 	left: 0px;
 	margin: 0px;
 	opacity: 0;
 }
 
-#sidebar-wrapper.collapsed{
-	width: 65px !important;
-	transition: none;
-	/*transition: all 0.5s ease;*/
-	left: -200px;
-}
-
-#sidebar-menu{
-	width: 100%;
-	padding: 8px;
-	cursor: pointer;
-	color: #fff;
-}
-
-#sidebar-subMenu{
-	padding: 0px !important;
-	width: 205px;
-	cursor: pointer;
-	color: #fff;
-}
+#sidebar-wrapper.collapsed{ width: 65px !important; transition: none; left: -200px; }
+#sidebar-menu{ width: 100%; padding: 8px; cursor: pointer;color: #fff;}
+#sidebar-subMenu{ padding: 0px !important; width: 205px; cursor: pointer; color: #fff;}
 
 #sidebar-subMenu a.accordion-section-title{
+	border-style: solid;
+	border-width: 1px 0px 0px 0px;
+	border-color: #61605e;
+	font-size: 1.1em;
+	padding-top: 7px;
+	padding-bottom: 7px; 
 	width: 205px;	
 	transition: none;
 	padding-left: 18px;
 	text-decoration: none;
 	color: #fff;
+	background-color: #444243;
 }
+
 #sidebar-subMenu a.accordion-section-title:hover{
 	transition: none;
+	border-left-color: #fff;
 	border-left-width: 3px;
 	border-left-style: solid;
 	padding-left: 15px;
 	background-color: #d69402;
 }
+
 #sidebar-item{
-	background-color: rgba(255,255,255,0.075);
-	padding-left: 18px;
+	border-style: solid;
+	border-width: 0.5px 0px 0px 0px;
+	border-color: #9f9e9c;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	background-color: #61605e;
+	padding-left: 36px;
 	cursor: pointer;
 }
 
-#sidebar-item a,#sidebar-item a:hover{
-	text-decoration: none;
-	color: #fff;
-	border-left-style: none;
-	border-width: 0px;
-}
-#sidebar-item a:hover{
-	color: #000;
-}
+#sidebar-item a,#sidebar-item a:hover{ text-decoration: none; color: inherit; border-left-style: none; border-width: 0px;}
 #sidebar-item:hover{
 	text-decoration: none;
-	color: #fff;
-	background-color: #d69402;
+	color: #000;
+	background-color: #d69402 !important;
+	border-left-color: #fff;
 	border-left-width: 3px;
-	padding-left: 15px;
+	padding-left: 33px;
 	border-left-style: solid;
 }
 
-#sidebar-wrapper ul i{
-	padding: 0px 10px;
-}
 #sidebar-wrapper ul{
 	margin: 0px;
 	padding: 0px;
 	font-size: 1.6em;
 	border-style: solid;
 	border-width: 0px 0px 1px 0px;
-	border-color: red;
+	border-color: #9f9e9c;
 }
-
-#sidebar-wrapper ul li{
-	font-size: 0.7em;
-	padding-left: 10px;
-	background-color: rgba(255,255,255,0.075);
-}
-
-
-#sidebar-wrapper a:link, #sidebar-wrapper a:visited{
-	text-decoration: none;
-}  
-
-#navbar-wrapper{
-	margin-bottom: 0px;
-}
-
-#footer-wrapper{
-	margin-top: 0px;
-}
-
-#main-content-wrapper{
-	padding-left: 0px;
-}
-
-#main-col-wrapper{
-	display: -webkit-box;
-  	display: -webkit-flex;
-  	display: -ms-flexbox;
-  	display: flex;
-}
-
-li {list-style-type: none;}
-
+#sidebar-wrapper ul i{ padding: 0px 10px;}
+#sidebar-wrapper ul li{ font-size: 0.7em; padding-left: 10px; }
+#sidebar-wrapper a:link, #sidebar-wrapper a:visited{ text-decoration: none; }
+#navbar-wrapper{ margin-bottom: 0px; }
+#footer-wrapper{ margin-top: 0px; }
+#main-content-wrapper{ padding-left: 0px; }
+#main-col-wrapper{ display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; }
+li { list-style-type: none; }
 .icon-class-record:before { content: "\e900";}
 .icon-modules:before { content: "\e901";}
-
 .accordion, .accordion * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
 .accordion { overflow:hidden; }
 .accordion-section{transition: all 0.5s ease;}
@@ -126,18 +90,5 @@ li {list-style-type: none;}
 .accordion-section-title.active, .accordion-section-title:hover { text-decoration:none; }
 .accordion-section:last-child .accordion-section-title { border-bottom:none; } 
 .accordion-section-content { display:none;width: 220px; resize:none;}
-
-.pull-left .caret {
-	float: left !important;
-	height: 100%;
-}
-
-.arrow-left{
-	width: 0px;
-	float: right;
-	height: 0px;
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	border-right: 10px solid #fff;
-	display: none;
-}
+.pull-left .caret { float: left !important; height: 100%; }
+.arrow-left{ width: 0px; float: right; height: 0px; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-right: 10px solid #fff; display: none; }
